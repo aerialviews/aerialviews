@@ -1,137 +1,183 @@
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aerial Views provides professional drone photography and videography for real estate, agriculture, nature, corporate events and weddings in Bengaluru and Mangaluru.">
-  <title>Aerial Views | Drone Photography & Videography</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0d0c">
+  <meta name="description" content="Aerial Views — cinematic drone photography and videography for real estate, weddings, corporate events, agriculture and nature in Bengaluru and Mangaluru.">
+  <title>Aerial Views™ | Elevate Every Moment from Above</title>
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #101114;
-      color: #f5f1e8;
-      line-height: 1.6;
+    :root{--ink:#080b0a;--panel:#111715;--gold:#d9b76b;--cream:#f6f2e8;--muted:#b9c0b9}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--ink);color:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topbar{position:absolute;z-index:10;top:0;left:0;width:100%;border-bottom:1px solid #ffffff22;background:linear-gradient(#050807b8,transparent)}
+    nav{height:88px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px;letter-spacing:.15em;font-size:14px;font-weight:800}
+    .brandmark{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif;font-size:19px;letter-spacing:-.08em}
+    .brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.22em;margin-top:4px;font-weight:500}
+    .navlinks{display:flex;align-items:center;gap:28px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#f5f1e7}
+    .navlinks a:hover{color:var(--gold)}
+    .nav-cta,.button{border:1px solid var(--gold);padding:13px 18px;color:var(--gold);font-size:11px;letter-spacing:.13em;text-transform:uppercase;display:inline-flex;align-items:center;justify-content:center;transition:.25s}
+    .nav-cta:hover,.button:hover{background:var(--gold);color:#111}
+    .hero{min-height:720px;height:100svh;max-height:950px;position:relative;display:flex;align-items:center;overflow:hidden;background:#17201b}
+    .hero-bg{position:absolute;inset:0;background:url('assets/aerial-fields-moody.jpg') center 52%/cover no-repeat;transform:scale(1.035);animation:slowzoom 24s ease-in-out infinite alternate}
+    .hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#060908d9 0%,#080b0a9c 43%,#080b0a20 100%),linear-gradient(0deg,#080b0a 0%,transparent 42%,#080b0a55 100%)}
+    /* Soft cloud wisps drift across the hero to create a subtle cinematic atmosphere. */
+    .clouds{position:absolute;inset:-15% -40%;pointer-events:none;overflow:hidden;opacity:.5;mix-blend-mode:screen}
+    .cloud{position:absolute;width:58vw;height:18vw;min-height:120px;border-radius:50%;filter:blur(35px);background:radial-gradient(ellipse at center,rgba(230,239,235,.36) 0%,rgba(203,218,212,.16) 38%,transparent 72%);animation:drift linear infinite}
+    .cloud.c1{top:8%;left:-8%;animation-duration:70s}
+    .cloud.c2{top:22%;left:28%;width:48vw;animation-duration:95s;animation-delay:-30s;opacity:.6}
+    .cloud.c3{top:3%;left:68%;width:42vw;animation-duration:82s;animation-delay:-48s}
+    .cloud.c4{top:34%;left:-5%;width:35vw;animation-duration:105s;animation-delay:-60s;opacity:.45}
+    .hero-content{position:relative;z-index:2;padding-top:90px;max-width:760px}
+    .eyebrow{color:var(--gold);font-size:11px;letter-spacing:.28em;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+    .eyebrow:before{content:"";height:1px;width:38px;background:var(--gold)}
+    h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(52px,8vw,100px);line-height:.98;letter-spacing:-.045em;margin:25px 0 22px;max-width:780px}
+    h1 em{color:var(--gold);font-weight:400}
+    .hero-copy{max-width:490px;color:#e0e4df;line-height:1.8;font-size:15px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+    .button.primary{background:var(--gold);color:#111}
+    .button.primary:hover{background:#f0d38f}
+    .hero-foot{position:absolute;z-index:2;bottom:30px;left:0;right:0;display:flex;justify-content:space-between;align-items:end;color:#e4e8e2;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+    .scrollhint{display:flex;align-items:center;gap:12px}.scrollhint:before{content:"";width:42px;height:1px;background:var(--gold)}
+    .locations{color:var(--gold)}
+    section{padding:105px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:42px}
+    .kicker{color:var(--gold);font-size:10px;letter-spacing:.25em;text-transform:uppercase}
+    h2{font:400 clamp(36px,5vw,58px)/1.08 Georgia,serif;letter-spacing:-.035em;margin:14px 0 0}
+    .section-intro{color:var(--muted);line-height:1.8;max-width:360px;font-size:14px}
+    .work{background:var(--ink)}
+    .gallery{display:grid;grid-template-columns:1.08fr .92fr;gap:18px}
+    .photo{position:relative;overflow:hidden;min-height:300px;background:#202a23}
+    .photo:first-child{min-height:490px}
+    .photo img{width:100%;height:100%;min-height:inherit;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1);filter:saturate(.9)}
+    .photo:hover img{transform:scale(1.045);filter:saturate(1.08)}
+    .photo:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#050807c9)}
+    .photo-label{position:absolute;z-index:1;bottom:25px;left:26px;right:26px;display:flex;justify-content:space-between;align-items:end;gap:10px}
+    .photo-label strong{font:400 25px Georgia,serif}
+    .photo-label span{font-size:10px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase}
+    .services{background:#101613}
+    .service-grid{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #ffffff22;border-left:1px solid #ffffff22}
+    .service{padding:26px 20px 30px;border-right:1px solid #ffffff22;border-bottom:1px solid #ffffff22;min-height:180px;transition:background .25s}
+    .service:hover{background:#1a211c}
+    .service .num{color:var(--gold);font-size:10px;letter-spacing:.15em}
+    .service h3{font:400 22px Georgia,serif;margin:34px 0 10px}
+    .service p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+    .statement{padding:100px 0;background:linear-gradient(110deg,#111815,#080b0a)}
+    .statement-inner{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .statement blockquote{font:400 clamp(32px,4.5vw,54px)/1.15 Georgia,serif;margin:0;letter-spacing:-.03em}
+    .statement blockquote span{color:var(--gold);font-style:italic}
+    .statement-copy{color:var(--muted);font-size:14px;line-height:1.9;max-width:450px}
+    .contact{padding:95px 0 70px;background:#080b0a}
+    .contact-panel{border:1px solid #d9b76b66;padding:clamp(28px,6vw,70px);position:relative;overflow:hidden;background:radial-gradient(ellipse at 100% 0%,#d9b76b14,transparent 48%),#101512}
+    .contact-panel h2{max-width:650px}
+    .contact-bottom{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-top:34px}
+    .contact-links{display:flex;flex-direction:column;gap:12px;color:#e8e9e3;font-size:14px}
+    .contact-links a:hover{color:var(--gold)}
+    footer{padding:24px 0;border-top:1px solid #ffffff1c;color:#a9b0a9;font-size:11px}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+    .social{color:var(--gold);letter-spacing:.08em}
+    @keyframes drift{from{transform:translateX(-10vw)}to{transform:translateX(90vw)}}
+    @keyframes slowzoom{from{transform:scale(1.035)}to{transform:scale(1.12)}}
+    @media(max-width:760px){
+      .wrap{width:min(100% - 30px,1160px)}nav{height:74px}.navlinks{gap:14px}.navlinks a:not(.nav-cta){display:none}.nav-cta{padding:11px 12px;font-size:9px}
+      .hero{min-height:700px;height:94svh}.hero-content{padding-top:55px}.hero-copy{font-size:14px}.hero-foot{bottom:20px;font-size:9px}
+      section{padding:72px 0}.section-head{display:block}.section-intro{margin-top:18px}.gallery{grid-template-columns:1fr}.photo:first-child{min-height:360px}.photo{min-height:300px}
+      .service-grid{grid-template-columns:repeat(2,1fr)}.service{min-height:155px;padding:20px 16px}.service h3{margin-top:25px;font-size:20px}.statement-inner{grid-template-columns:1fr;gap:25px}.contact-bottom{align-items:start;flex-direction:column}.cloud{filter:blur(25px);width:85vw;height:28vw}
     }
-    header {
-      padding: 22px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      border-bottom: 1px solid #333;
-    }
-    .brand { color: #d7b56d; font-size: 24px; font-weight: bold; letter-spacing: 2px; }
-    nav a { color: #f5f1e8; text-decoration: none; margin-left: 18px; font-size: 14px; }
-    .hero {
-      padding: 100px 7% 90px;
-      text-align: center;
-      background: radial-gradient(ellipse at top, #353024, #101114 70%);
-    }
-    .eyebrow { color: #d7b56d; letter-spacing: 3px; text-transform: uppercase; font-size: 12px; }
-    h1 { font-size: clamp(36px, 7vw, 65px); line-height: 1.12; margin: 20px 0; }
-    h2 { font-size: 30px; }
-    .gold { color: #d7b56d; }
-    .hero p { max-width: 650px; margin: 0 auto 28px; color: #d1d1d1; }
-    .btn {
-      display: inline-block; padding: 13px 23px; margin: 5px;
-      border-radius: 4px; text-decoration: none; font-weight: bold;
-    }
-    .primary { background: #d7b56d; color: #101114; }
-    .secondary { border: 1px solid #d7b56d; color: #d7b56d; }
-    section { padding: 65px 7%; }
-    .section-intro { color: #bdbdbd; max-width: 650px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 28px; }
-    .service { padding: 24px; background: #1a1b20; border: 1px solid #333; border-radius: 8px; }
-    .service h3 { color: #d7b56d; margin-top: 0; }
-    .service p { color: #c7c7c7; font-size: 14px; }
-    .about { background: #18191d; }
-    .contact { text-align: center; }
-    footer { text-align: center; padding: 25px; border-top: 1px solid #333; color: #aaa; font-size: 13px; }
-    @media(max-width:600px) {
-      header { justify-content: center; text-align: center; }
-      nav a { margin: 0 7px; }
-      .hero { padding: 70px 6%; }
-      section { padding: 48px 6%; }
-    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-bg,.cloud{animation:none!important}*{transition:none!important}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-  <img src="aerial-views-logo.png" alt="Aerial Views™"
-       style="width:180px;max-width:100%;height:auto;display:block;">
-</div>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+  <header class="topbar">
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Aerial Views home">
+        <span class="brandmark">AV</span><span>AERIAL VIEWS<small>ELEVATE EVERY MOMENT FROM ABOVE</small></span>
+      </a>
+      <div class="navlinks">
+        <a href="#work">Our Work</a><a href="#services">Services</a><a href="#contact" class="nav-cta">Let's Talk ↗</a>
+      </div>
     </nav>
   </header>
-
   <main>
-    <section class="hero">
-      <div class="eyebrow">DGCA Certified Remote Pilot</div>
-      <h1>Elevate Every Moment<br><span class="gold">from Above</span></h1>
-      <p>Professional drone photography and videography that captures places, people and perspectives from a whole new angle.</p>
-      <a class="btn primary" href="#services">Explore Our Services</a>
-      <a class="btn secondary" href="#contact">Get in Touch</a>
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="clouds" aria-hidden="true"><span class="cloud c1"></span><span class="cloud c2"></span><span class="cloud c3"></span><span class="cloud c4"></span></div>
+      <div class="wrap hero-content">
+        <div class="eyebrow">Drone photography · Videography</div>
+        <h1>See your world<br>from <em>above.</em></h1>
+        <p class="hero-copy">Distinctive aerial perspectives for places, people and brands. We turn meaningful moments and remarkable locations into imagery that stays with you.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:aerialviews007@gmail.com?subject=Aerial%20Views%20Enquiry">Book an aerial shoot ↗</a>
+          <a class="button" href="#work">Explore our work ↓</a>
+        </div>
+      </div>
+      <div class="wrap hero-foot"><span class="scrollhint">Scroll to explore</span><span class="locations">Bengaluru · Mangaluru, India</span></div>
     </section>
 
-    <section id="services">
-      <div class="eyebrow">What We Do</div>
-      <h2>Our <span class="gold">Services</span></h2>
-      <p class="section-intro">Aerial visuals for businesses, properties, special occasions and the natural world.</p>
-      <div class="grid">
-        <article class="service">
-          <h3>Real Estate</h3>
-          <p>Showcase properties, villas, resorts and land with compelling aerial perspectives.</p>
-        </article>
-        <article class="service">
-          <h3>Agriculture</h3>
-          <p>Capture farms, plantations and agricultural landscapes from above.</p>
-        </article>
-        <article class="service">
-          <h3>Nature</h3>
-          <p>Discover coastlines, forests, landscapes and scenic destinations through aerial imagery.</p>
-        </article>
-        <article class="service">
-          <h3>Corporate Events</h3>
-          <p>Capture event venues, outdoor gatherings and corporate occasions from the sky.</p>
-        </article>
-        <article class="service">
-          <h3>Weddings</h3>
-          <p>Add cinematic aerial perspectives to wedding venues and celebrations.</p>
-        </article>
+    <section class="work" id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">A view from above</div><h2>Grounded in nature.<br><em style="color:var(--gold)">Made to stand out.</em></h2></div>
+          <p class="section-intro">A glimpse of our aerial perspective. Every frame reveals a different pattern, path and story in the landscape.</p>
+        </div>
+        <div class="gallery">
+          <a class="photo" href="assets/aerial-fields-moody.jpg" target="_blank" rel="noopener" aria-label="View aerial photograph of green fields beneath dramatic clouds">
+            <img src="assets/aerial-fields-moody.jpg" alt="Aerial view of green agricultural fields beneath dramatic monsoon clouds" loading="lazy">
+            <div class="photo-label"><strong>Under the Monsoon Sky</strong><span>01 / Nature</span></div>
+          </a>
+          <a class="photo" href="assets/aerial-fields-river.jpg" target="_blank" rel="noopener" aria-label="View aerial photograph of green fields, river and bridge">
+            <img src="assets/aerial-fields-river.jpg" alt="Aerial view of lush green fields, a river and a small bridge" loading="lazy">
+            <div class="photo-label"><strong>Paths Through Green</strong><span>02 / Landscape</span></div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section id="about" class="about">
-      <div class="eyebrow">About Aerial Views</div>
-      <h2>Fresh Perspectives.<br><span class="gold">Meaningful Stories.</span></h2>
-      <p class="section-intro">Aerial Views is a drone photography and videography venture led by a DGCA Certified Remote Pilot. We aim to create distinctive aerial visuals for clients in Bengaluru, Mangaluru and surrounding areas, subject to flight permissions and local regulations.</p>
-      <p class="section-intro"><strong>Service areas:</strong> Bengaluru and Mangaluru, Karnataka.</p>
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">What we capture</div><h2>A higher view for<br>every story.</h2></div>
+          <p class="section-intro">Thoughtful aerial imagery designed to show your location, event or project from a fresh perspective.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service"><span class="num">01 / PROPERTY</span><h3>Real Estate</h3><p>Showcase properties, land and surroundings from above.</p></article>
+          <article class="service"><span class="num">02 / CELEBRATIONS</span><h3>Weddings</h3><p>Capture the venue, atmosphere and big moments.</p></article>
+          <article class="service"><span class="num">03 / BUSINESS</span><h3>Corporate Events</h3><p>Add scale and perspective to brand experiences.</p></article>
+          <article class="service"><span class="num">04 / LAND</span><h3>Agriculture</h3><p>Reveal field patterns, terrain and the wider landscape.</p></article>
+          <article class="service"><span class="num">05 / OUTDOORS</span><h3>Nature</h3><p>Discover the beauty of coastlines, forests and countryside.</p></article>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="eyebrow">Let's Work Together</div>
-      <h2>Bring Your Vision <span class="gold">to Life</span></h2>
-      <p class="section-intro" style="margin:0 auto 20px">Have a project, event or property to showcase? Contact us to discuss your requirements.</p>
-      <a class="btn primary" href="https://www.instagram.com/aerialviewsofficial/" target="_blank" rel="noopener">Message on Instagram</a>
-      <p style="color:#aaa;font-size:13px">For enquiries, please message us on Instagram.</p>
+    <section class="statement">
+      <div class="wrap statement-inner">
+        <blockquote>Every angle has a story.<br><span>We find the extraordinary one.</span></blockquote>
+        <p class="statement-copy">Aerial Views brings a considered eye to drone photography and videography. Based in India and serving Bengaluru and Mangaluru, we help clients see familiar places in an entirely new way. All flights are subject to applicable permissions, airspace restrictions and safe operating conditions.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div class="kicker">Have a project in mind?</div>
+          <h2>Let's create something <em style="color:var(--gold)">remarkable.</em></h2>
+          <div class="contact-bottom">
+            <div class="contact-links">
+              <a href="mailto:aerialviews007@gmail.com">✉ &nbsp; aerialviews007@gmail.com</a>
+              <a href="https://www.instagram.com/aerialviewsofficial/" target="_blank" rel="noopener">◎ &nbsp; @aerialviewsofficial ↗</a>
+              <span style="color:var(--muted)">Bengaluru · Mangaluru, India</span>
+            </div>
+            <a class="button primary" href="mailto:aerialviews007@gmail.com?subject=Let's%20work%20together">Start an enquiry ↗</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
-
-  <footer>
-    <div class="gold">AERIAL VIEWS</div>
-    Elevate Every Moment from Above<br>
-    Bengaluru &amp; Mangaluru, Karnataka<br>
-    &copy; 2026 Aerial Views. All rights reserved.
-  </footer>
+  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> AERIAL VIEWS™. All rights reserved.</span><a class="social" href="https://www.instagram.com/aerialviewsofficial/" target="_blank" rel="noopener">@aerialviewsofficial ↗</a><span>Elevate Every Moment from Above.</span></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
