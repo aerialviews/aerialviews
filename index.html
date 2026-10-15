@@ -27,6 +27,37 @@
     @media(max-width:1000px){.links{gap:14px}.locations{display:none}.services{grid-template-columns:repeat(3,1fr)}.service{min-height:300px}.trust{padding-inline:8px}.hero{min-height:580px}}
     @media(max-width:760px){.wrap{width:min(100% - 30px,var(--max))}.nav{min-height:72px}.brand img{width:51px;height:48px}.brand{min-width:0}.brandtext strong{font-size:13px}.brandtext small{font-size:9px}.menu{display:block}.links{display:none;position:absolute;top:71px;left:0;right:0;background:#071522;padding:18px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.links.open{display:flex}.links a{padding:12px 0;border-bottom:1px solid var(--line)}.links a:last-child{border:0}.nav>.btn{display:none}.hero{min-height:640px}.hero:before{background:linear-gradient(90deg,rgba(4,14,25,.91),rgba(4,14,25,.56)),linear-gradient(0deg,rgba(4,14,25,.7),transparent 45%),url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1100&q=80") center/cover}.hero-content{padding:70px 0 95px}h1{letter-spacing:-1.8px}.hero-note{left:15px;right:auto;text-align:left;bottom:18px}.trustgrid{grid-template-columns:1fr 1fr;gap:0;padding:10px 0}.trust{justify-content:flex-start;padding:14px 8px;border-right:0;border-bottom:1px solid var(--line)}.trust:nth-child(odd){border-right:1px solid var(--line)}.trust:nth-last-child(-n+2){border-bottom:0}.trust .symbol{font-size:19px}section{padding:64px 0}.services{grid-template-columns:1fr 1fr;gap:10px}.service{min-height:290px}.service-content{padding:15px}.service h3{font-size:16px}.service p{font-size:12px}.about-grid,.contact-grid{grid-template-columns:1fr;gap:28px}.about-image{min-height:300px;order:2}.checklist{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr}.cta{padding-bottom:64px}.cta-inner{padding:28px;align-items:flex-start;flex-direction:column}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-inner{flex-direction:column;align-items:flex-start}.whatsapp{right:14px;bottom:14px;width:52px;height:52px}}
     @media(max-width:390px){.services{grid-template-columns:1fr}.service{min-height:280px}.actions .btn{width:100%}.hero{min-height:680px}}
+ 
+.nature-gallery {
+  margin-top: 36px;
+}
+
+.nature-gallery h3 {
+  color: #e9b84f;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.nature-gallery-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.nature-gallery-images img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(233, 184, 79, 0.45);
+}
+
+@media (max-width: 600px) {
+  .nature-gallery-images {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -73,6 +104,13 @@
         <article class="service" style="--photo:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80')"><div class="service-content"><div class="service-icon">✧</div><h3>Corporate Events</h3><p>Capture launches, outdoor events and brand experiences from above.</p><a class="learn" href="#contact" data-service="Corporate Events">Enquire about events ↗</a></div></article>
         <article class="service" style="--photo:url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80')"><div class="service-content"><div class="service-icon">♡</div><h3>Weddings</h3><p>Add cinematic aerial perspectives to your special day and venue.</p><a class="learn" href="#contact" data-service="Weddings">Enquire about weddings ↗</a></div></article>
       </div>
+      <div class="nature-gallery">
+  <h3>Nature — Our Aerial Work</h3>
+  <div class="nature-gallery-images">
+    <img src="nature-aerial-1.jpg" alt="Aerial view of green countryside" loading="lazy">
+    <img src="nature-aerial-2.jpg" alt="Aerial view of green fields and waterways" loading="lazy">
+  </div>
+</div>
     </div></section>
 
     <section class="about" id="about"><div class="wrap about-grid">
