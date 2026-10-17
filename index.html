@@ -48,7 +48,7 @@
     .btn-ghost { border-color: rgba(255,255,255,.32); background: rgba(255,255,255,.04); }
     .btn-ghost:hover { border-color: var(--gold); color: var(--gold-light); }
     .hero { min-height: 680px; display: flex; align-items: center; position: relative; overflow: hidden; isolation: isolate; }
-    .hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: url("aerial-fields-moody.jpg") center 48%/cover no-repeat; }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: url("./aerial-fields-moody.jpg") center 48%/cover no-repeat; }
     .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(4,8,14,.96) 0%, rgba(4,8,14,.82) 42%, rgba(4,8,14,.3) 78%, rgba(4,8,14,.2) 100%), linear-gradient(0deg, rgba(4,8,14,.78), transparent 48%); }
     .hero-content { max-width: 760px; padding: 92px 0 112px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(231,185,87,.48); color: var(--gold-light); background: rgba(7,11,18,.55); border-radius: 999px; padding: 8px 13px; text-transform: uppercase; letter-spacing: 1.4px; font-size: 10px; font-weight: 700; }
@@ -92,7 +92,7 @@
     .portfolio-card figcaption strong { display: block; font: 700 16px Manrope, sans-serif; }
     .portfolio-card figcaption span { color: var(--muted); font-size: 12px; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .about-visual { min-height: 450px; position: relative; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: linear-gradient(0deg, rgba(5,10,17,.35), rgba(5,10,17,.1)), url("aerial-fields-river.jpg") center/cover no-repeat; }
+    .about-visual { min-height: 450px; position: relative; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: linear-gradient(0deg, rgba(5,10,17,.35), rgba(5,10,17,.1)), url("./aerial-fields-river.jpg") center/cover no-repeat; }
     .visual-label { position: absolute; left: 20px; bottom: 20px; right: 20px; padding: 16px 18px; border: 1px solid rgba(255,255,255,.18); border-radius: 13px; background: rgba(7,11,18,.82); backdrop-filter: blur(12px); }
     .visual-label strong { display: block; color: var(--gold-light); font: 700 15px Manrope, sans-serif; }
     .visual-label span { color: #d5dce5; font-size: 12px; }
@@ -197,7 +197,7 @@
  <body>
   <header class="topbar">
    <div class="wrap nav">
-    <a class="brand" href="#home" aria-label="Aerial Views home"> <img src="generated-image.png" alt="Aerial Views master logo" onerror="this.style.display='none'"> <span class="brand-copy"><strong>AERIAL VIEWS<span class="tm-mark">™</span></strong><small>Elevate Every Moment from Above</small></span> </a>
+    <a class="brand" href="#home" aria-label="Aerial Views home"> <img src="./generated-image.png" alt="Aerial Views master logo" onerror="this.style.display='none'"> <span class="brand-copy"><strong>AERIAL VIEWS<span class="tm-mark">™</span></strong><small>Elevate Every Moment from Above</small></span> </a>
     <nav class="navlinks" id="navlinks" aria-label="Main navigation">
      <a href="#home">Home</a> <a href="#services">Services</a> <a href="#portfolio">Our Work</a> <a href="#about">About</a> <a href="#contact">Contact</a>
     </nav>
@@ -241,7 +241,7 @@
       <p>From showcasing a property to capturing the character of a landscape, we help you tell your story from a fresh perspective.</p>
      </div>
      <div class="service-grid">
-      <article class="service" style="--photo:url('aerial-fields-moody.jpg')">
+      <article class="service" style="--photo:url('./aerial-fields-moody.jpg')">
        <div class="service-content">
         <div class="service-number">01 / AGRICULTURE</div>
         <h3>Agriculture</h3>
@@ -249,7 +249,7 @@
         <a class="service-link" href="#contact" data-service="Agriculture">Discuss your project ↗</a>
        </div>
       </article>
-      <article class="service" style="--photo:url('nature-aerial-1.jpg')">
+      <article class="service" style="--photo:url('./nature-aerial-1.jpg')">
        <div class="service-content">
         <div class="service-number">02 / NATURE</div>
         <h3>Nature</h3>
@@ -257,7 +257,7 @@
         <a class="service-link" href="#contact" data-service="Nature">Discuss your project ↗</a>
        </div>
       </article>
-      <article class="service" style="--photo:url('real-estate-aerial.jpg.png')">
+      <article class="service" style="--photo:url('./real-estate-aerial.jpg.png')">
        <div class="service-content">
         <div class="service-number">03 / REAL ESTATE</div>
         <h3>Real Estate</h3>
@@ -277,4 +277,4 @@
        <div class="service-content">
         <div class="service-number">05 / WEDDINGS</div>
         <h3>Weddings</h3>
-        <p>Capture your venue and celebration with 
+        <p>Capture your venue and celeb
