@@ -9,6 +9,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ 
+/* Keep service card content aligned */
+.service {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 330px;
+}
+
+.service-content .service-link {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
   <style>
     :root {
       --bg: #070b12;
