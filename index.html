@@ -193,7 +193,21 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
-  </style>
+ 
+/* Improve visibility of Agriculture and Nature photos */
+.service::before {
+  filter: brightness(1.2);
+}
+
+.service::after {
+  background: linear-gradient(
+    0deg,
+    rgba(4, 8, 14, 0.92) 0%,
+    rgba(4, 8, 14, 0.45) 42%,
+    rgba(4, 8, 14, 0.08) 100%
+  );
+}
+ </style>
 </head>
 <body>
   <header class="topbar">
