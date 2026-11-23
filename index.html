@@ -12,13 +12,7 @@
  
 
 
-  <style> 
-    <style>
-/* Keep service card content aligned */
-.service {
-  display: flex;
-  flex-direction: column;
-}
+  <style>
     :root {
       --bg: #070b12;
       --surface: #0d1521;
@@ -219,6 +213,52 @@
     rgba(4, 8, 14, 0.08) 100%
   );
 }
+
+    /* Cinematic refinement layer */
+    :root { --gold: #e9bd63; --gold-light: #ffe0a0; }
+    .topbar { background: rgba(5,9,15,.84); box-shadow: 0 10px 35px rgba(0,0,0,.18); }
+    .hero { min-height: min(760px, calc(100svh - 82px)); }
+    .hero::before { transform: scale(1.015); filter: saturate(.88) contrast(1.08); animation: hero-drift 24s ease-in-out infinite alternate; }
+    .hero::after { background: radial-gradient(ellipse at 78% 45%, rgba(231,185,87,.07), transparent 45%), linear-gradient(90deg, rgba(3,7,12,.97) 0%, rgba(3,7,12,.83) 38%, rgba(3,7,12,.34) 78%, rgba(3,7,12,.22) 100%), linear-gradient(0deg, rgba(3,7,12,.78), transparent 54%); }
+    .hero-content { animation: hero-enter .8s ease both; }
+    .eyebrow { box-shadow: inset 0 0 20px rgba(231,185,87,.035); }
+    h1 em { text-shadow: 0 0 38px rgba(245,213,138,.10); }
+    .btn { transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease; }
+    .btn-gold { box-shadow: 0 8px 30px rgba(231,185,87,.14), inset 0 1px rgba(255,255,255,.35); }
+    .btn-gold:hover { box-shadow: 0 12px 34px rgba(231,185,87,.26), inset 0 1px rgba(255,255,255,.4); }
+    .service, .portfolio-card, .process-card { box-shadow: 0 12px 35px rgba(0,0,0,.12); }
+    .service::before { filter: brightness(1.12) saturate(.94) contrast(1.04); }
+    .service::after { background: linear-gradient(0deg, rgba(3,7,12,.97) 0%, rgba(3,7,12,.72) 40%, rgba(3,7,12,.08) 100%); }
+    .service:hover, .process-card:hover { box-shadow: 0 18px 42px rgba(0,0,0,.24); }
+    .portfolio-card { position: relative; }
+    .portfolio-card img { filter: saturate(.94) contrast(1.03); }
+    .portfolio-card:hover { border-color: rgba(231,185,87,.42); }
+    .portfolio-card figcaption { background: linear-gradient(120deg, rgba(15,23,34,.96), rgba(10,15,23,.92)); }
+    .portfolio-card figcaption strong { margin-bottom: 3px; }
+    .about-visual { box-shadow: 0 24px 65px rgba(0,0,0,.28); }
+    .visual-label { box-shadow: 0 12px 30px rgba(0,0,0,.18); }
+    .process-card { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .process-card:hover { transform: translateY(-4px); border-color: rgba(231,185,87,.42); }
+    .social-links a, input, select, textarea, form { transition: border-color .2s ease, box-shadow .2s ease; }
+    input:focus, select:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(231,185,87,.12); }
+    .wa-float { transition: transform .25s ease, box-shadow .25s ease; box-shadow: 0 8px 28px rgba(0,0,0,.35), 0 0 0 6px rgba(34,200,117,.08); }
+    .wa-float:hover { box-shadow: 0 12px 35px rgba(0,0,0,.4), 0 0 0 8px rgba(34,200,117,.12); }
+    .reveal-ready .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal-ready .reveal.is-visible { opacity: 1; transform: none; }
+    @keyframes hero-enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes hero-drift { from { transform: scale(1.015) translateX(0); } to { transform: scale(1.07) translateX(-.6%); } }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+    @media (max-width: 760px) {
+      .hero { min-height: 620px; }
+      .hero::before { animation: none; filter: saturate(.88) contrast(1.06); }
+      .hero::after { background: linear-gradient(90deg, rgba(3,7,12,.94), rgba(3,7,12,.62)), linear-gradient(0deg, rgba(3,7,12,.82), transparent 58%); }
+      .service, .portfolio-card, .process-card { box-shadow: none; }
+      .service:hover, .process-card:hover { transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-content, .hero::before { animation: none !important; }
+      .reveal-ready .reveal { opacity: 1; transform: none; transition: none; }
+    }
  </style>
 </head>
 <body>
@@ -325,14 +365,21 @@
         </div>
       </div>
     </section>
-<p>Aerial Views was founded by Arjun Aranha, a DGCA Certified Remote Pilot for Small and Medium drones, combining a passion for aerial photography with professional experience in sales across multiple industries.</p>
-
-<p>With a background in sales, customer relationship management, business development, and working with diverse clients, I understand that every project has a unique purpose. From real estate and businesses to events, agriculture, and landscapes, I aim to capture aerial visuals that offer a fresh perspective and help tell your story. From understanding your requirements to planning and capturing the right shots, I bring a customer-focused approach, clear communication, and professional experience to every project.</p>
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="about-visual">
+          <div class="visual-label"><strong>Aerial Views</strong><span>Elevate Every Moment from Above</span></div>
+        </div>
+        <div class="about-copy">
+          <div class="kicker">Behind the Perspective</div>
+          <h2>More than a drone shot. A story from above.</h2>
+          <p>Aerial Views was founded by Arjun Aranha, a DGCA Certified Remote Pilot for Small and Medium drones, combining a passion for aerial photography with professional experience in sales across multiple industries.</p>
+          <p>With a background in sales, customer relationship management, business development, and working with diverse clients, I understand that every project has a unique purpose. From real estate and businesses to events, agriculture, and landscapes, I aim to capture aerial visuals that offer a fresh perspective and help tell your story. From understanding your requirements to planning and capturing the right shots, I bring a customer-focused approach, clear communication, and professional experience to every project.</p>
           <div class="ticks">
             <div class="tick"><span>✓</span> DGCA Certified Remote Pilot</div>
             <div class="tick"><span>✓</span> Project-specific planning</div>
             <div class="tick"><span>✓</span> Safety-conscious operations</div>
-            <div class="tick"><span>✓</span> Mangalore, Bangalore </div>
+            <div class="tick"><span>✓</span> Mangaluru, Bengaluru</div>
           </div>
           <a class="btn btn-gold" href="#contact">Tell Us About Your Project ↗</a>
         </div>
@@ -413,6 +460,7 @@
       const isOpen = navlinks.classList.toggle("open");
       menuBtn.setAttribute("aria-expanded", String(isOpen));
       menuBtn.textContent = isOpen ? "×" : "☰";
+      menuBtn.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
     });
 
     navlinks.querySelectorAll("a").forEach(link => {
@@ -424,6 +472,30 @@
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Add gentle scroll reveals without hiding content if scripts are unavailable.
+    const revealTargets = document.querySelectorAll(".section-head, .service, .portfolio-card, .about-visual, .about-copy, .process-card, .cta-panel, .contact-copy, #quoteForm");
+    revealTargets.forEach(el => el.classList.add("reveal"));
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.body.classList.add("reveal-ready");
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+      revealTargets.forEach(el => revealObserver.observe(el));
+    }
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && navlinks.classList.contains("open")) {
+        navlinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+      }
+    });
 
     document.querySelectorAll("[data-service]").forEach(link => {
       link.addEventListener("click", () => {
