@@ -12,6 +12,10 @@
   gtag('js', new Date());
   gtag('config', 'G-RLEM8SPV23');
 </script>
+
+<!-- GoatCounter page-view tracking -->
+<script data-goatcounter="https://aerialviews.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
   
   <meta name="theme-color" content="#070b12">
   <meta name="description" content="Aerial Views creates professional drone photography and videography for agriculture, nature, real estate, corporate events and weddings in Mangaluru and Bengaluru.">
@@ -149,6 +153,10 @@
     .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
     .footer strong { color: var(--white); letter-spacing: 1.5px; }
     .footer-tagline { color: var(--gold-light); }
+    .footer-stats { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 12px; }
+    .footer-stat { color: var(--muted); font-size: 12px; }
+    .footer-stat strong { color: var(--gold-light); letter-spacing: 0; font: 700 13px Manrope, sans-serif; }
+    .footer-stat span { color: var(--muted); }
     .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 40; width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: #22c875; color: #042615; border: 2px solid #c0ffdd; box-shadow: 0 8px 28px #0008; font-size: 25px; }
     .wa-float:hover { transform: translateY(-3px); }
     @media (max-width: 1050px) {
@@ -487,7 +495,13 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <div><strong>AERIAL VIEWS<span class="tm-mark">™</span></strong> <span class="footer-tagline">— Elevate Every Moment from Above</span></div>
+      <div>
+        <div><strong>AERIAL VIEWS<span class="tm-mark">™</span></strong> <span class="footer-tagline">— Elevate Every Moment from Above</span></div>
+        <div class="footer-stats" aria-label="Website statistics">
+          <div class="footer-stat">Total visits: <strong id="totalVisits">Loading…</strong></div>
+          <div class="footer-stat">Active users (last 30 days): <strong id="uniqueVisitors">Loading…</strong></div>
+        </div>
+      </div>
       <div>Mangaluru · Bengaluru &nbsp; | &nbsp; © <span id="year"></span> Aerial Views</div>
     </div>
   </footer>
@@ -515,6 +529,40 @@
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // GoatCounter: all-time page views. Enable "Allow adding visitor counts
+    // on your website" in GoatCounter site settings for this public counter.
+    fetch("https://aerialviews.goatcounter.com/counter/TOTAL.json")
+      .then(response => {
+        if (!response.ok) throw new Error("GoatCounter count unavailable");
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById("totalVisits").textContent = data.count ?? "—";
+      })
+      .catch(() => {
+        document.getElementById("totalVisits").textContent = "Unavailable";
+      });
+
+    // Google Analytics 4: active users over the last 30 days.
+    // Public Apps Script Web App endpoint deployed for this property.
+    const GA4_STATS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwfteS_6WnkqpTPdOrAq2DkDhKLmF65c01W88TVaE7TBdwftmlCgtesKLgxjUF3ZRK9/exec";
+    if (GA4_STATS_ENDPOINT.startsWith("https://")) {
+      fetch(GA4_STATS_ENDPOINT)
+        .then(response => {
+          if (!response.ok) throw new Error("GA4 report unavailable");
+          return response.json();
+        })
+        .then(data => {
+          document.getElementById("uniqueVisitors").textContent =
+            Number(data.activeUsers).toLocaleString("en-IN");
+        })
+        .catch(() => {
+          document.getElementById("uniqueVisitors").textContent = "Unavailable";
+        });
+    } else {
+      document.getElementById("uniqueVisitors").textContent = "Setup required";
+    }
 
     // Add gentle scroll reveals without hiding content if scripts are unavailable.
     const revealTargets = document.querySelectorAll(".section-head, .service, .portfolio-card, .about-visual, .about-copy, .process-card, .cta-panel, .contact-copy, #quoteForm");
